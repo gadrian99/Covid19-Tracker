@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import InfoBox from './InfoBox'
-import { MenuItem, FormControl, Select } from "@material-ui/core"
+import Map from './Map'
+import { MenuItem, FormControl, Select, Card, CardContent } from "@material-ui/core"
 import './App.css';
 
 
@@ -34,31 +35,38 @@ function App() {
 
   return (
     <div className="app">
-      <div className="app__header">
-        <h1>COVID-19 Tracker</h1>
-        <FormControl className="app__dropdown">
-          <Select variant="outlined" onChange={onCountryChange} value={country}>
-            <MenuItem value="worldwide">Worldwide</MenuItem>
-            {countries.map((country) => (
-              <MenuItem value={country.value}>{country.name}</MenuItem>
-            ))}
-          </Select>
-        </FormControl>
+      <div className="app__left">
+        <div className="app__header">
+          <h1>COVID-19 Tracker</h1>
+          <FormControl className="app__dropdown">
+            <Select variant="outlined" onChange={onCountryChange} value={country}>
+              <MenuItem value="worldwide">Worldwide</MenuItem>
+              {countries.map((country) => (
+                <MenuItem value={country.value}>{country.name}</MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </div>
+
+        <div className="app__stats">
+                <InfoBox title="coronavirus cases" cases="123" total="23213"/>
+                <InfoBox title="recovered" cases="123" total="23213"/>
+                <InfoBox title="deaths" cases="123" total="23213"/>
+        </div>
+        {/* InfoBoxes */}
+        {/* InfoBoxes */}
+        {/* InfoBoxes */}
+        <Map />
       </div>
+      <Card className="app__right">
+        <CardContent>
+          <h3>Live Cases by Country</h3>
+          <h3>Worldwide new cases</h3>
+        </CardContent>
 
-      <div className="app__stats">
-              <InfoBox title="coronavirus cases" cases="123" total="23213"/>
-              <InfoBox title="recovered" cases="123" total="23213"/>
-              <InfoBox title="deaths" cases="123" total="23213"/>
-      </div>
-      {/* InfoBoxes */}
-      {/* InfoBoxes */}
-      {/* InfoBoxes */}
-
-      {/* Table */}
-      {/* Graph */}
-
-      {/* Map */}
+        {/* Table */}
+        {/* Graph */}
+      </Card>
     </div>
   );
 }
