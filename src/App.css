@@ -20,6 +20,10 @@ body {
   justify-content: space-between;
 }
 
+.app__left {
+  flex: 0.8
+}
+
 .app__stats {
   display: flex;
   justify-content: space-between;
