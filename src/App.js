@@ -11,6 +11,14 @@ function App() {
   const [countryInfo, setCountryInfo] = useState({})
 
   useEffect(() => {
+    fetch('https://disease.sh/v3/covid-19/all')
+    .then(response => response.json())
+    .then(data => {
+      setCountryInfo(data)
+    })
+  }, [])
+
+  useEffect(() => {
 
     const getCountriesData = async () => {
       await fetch('https://disease.sh/v3/covid-19/countries')
@@ -24,26 +32,23 @@ function App() {
         setCountries(countries)
       })
     }
-
     getCountriesData()
   }, [])
 
-    const onCountryChange = async (event) => {
-      const countryCode = event.target.value
+  const onCountryChange = async (event) => {
+    const countryCode = event.target.value
 
-      const url = countryCode === 'worldwide' 
-        ? 'https://disease.sh/v3/covid-19/all' 
-        : `https://disease.sh/v3/covid-19/countries/${countryCode}`
+    const url = countryCode === 'worldwide' 
+      ? 'https://disease.sh/v3/covid-19/all' 
+      : `https://disease.sh/v3/covid-19/countries/${countryCode}`
 
-      await fetch(url)
-      .then(response => response.json())
-      .then(data => {
-        setCountry(countryCode)
-        setCountryInfo(data)
-      })
-    }
-
-    console.log(countryInfo)
+    await fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      setCountry(countryCode)
+      setCountryInfo(data)
+    })
+  }
 
   return (
     <div className="app">
@@ -61,9 +66,9 @@ function App() {
         </div>
 
         <div className="app__stats">
-                <InfoBox title="coronavirus cases" cases="123" total="23213"/>
-                <InfoBox title="recovered" cases="123" total="23213"/>
-                <InfoBox title="deaths" cases="123" total="23213"/>
+                <InfoBox title="Coronavirus Cases" cases={countryInfo.todayCases} total={countryInfo.cases} />
+                <InfoBox title="Recovered" cases={countryInfo.todayRecovered} total={countryInfo.todayRecovered}/>
+                <InfoBox title="Deaths" cases={countryInfo.todayDeaths} total={countryInfo.deaths}/>
         </div>
         {/* InfoBoxes */}
         {/* InfoBoxes */}
