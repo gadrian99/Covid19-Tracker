@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import InfoBox from './InfoBox'
 import Map from './Map'
 import Table from './Table'
+import { sortData } from './util'
 import { MenuItem, FormControl, Select, Card, CardContent } from "@material-ui/core"
 import './App.css';
 
@@ -30,7 +31,9 @@ function App() {
           name: country.country,
           value: country.countryInfo.iso2
         }))
-        setTableData(data)
+
+        const sortedData = sortData(data)
+        setTableData(sortedData)
         setCountries(countries)
       })
     }
