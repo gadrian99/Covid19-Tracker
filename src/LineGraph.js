@@ -60,7 +60,7 @@ function LineGraph({ casesType = 'cases' }) {
         }
 
         fetchData()
-    }, [])
+    }, [casesType])
 
     const buildChartData = (data, casesType) => {
         let chartData = []
@@ -81,7 +81,6 @@ function LineGraph({ casesType = 'cases' }) {
 
     return (
         <div>
-            <h1>I am a graph</h1>
             {data?.length > 0 && (
                 <Line 
                 data = {{
