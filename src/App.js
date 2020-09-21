@@ -95,6 +95,7 @@ function App() {
             total={prettyPrintStat(countryInfo.recovered)}
           />
           <InfoBox 
+            isRed
             active={casesType === "deaths"}
             onClick={(e) => setCasesType('deaths')}
             title="Deaths" 
@@ -115,7 +116,7 @@ function App() {
           <h3>Live Cases by Country</h3>
           <Table countries={tableData} />
           <h3>Worldwide new {casesType}</h3>
-          <LineGraph casesType={casesType}/>
+          <LineGraph className="app__graph" casesType={casesType}/>
         </CardContent>
       </Card>
     </div>
