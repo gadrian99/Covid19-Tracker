@@ -10,6 +10,10 @@
     justify-content: space-between;
 }
 
+.table__img {
+    height: 10px;
+}
+
 .table td {
     padding: 0.5rem;
 }
