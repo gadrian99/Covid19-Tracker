@@ -25,6 +25,15 @@ body {
   justify-content: space-between;
 }
 
+.app__header-wrapper {
+  display: flex;
+}
+
+.app__header-wrapper > h4 {
+  line-height: 3.25;
+  margin-right: 15px;
+}
+
 .app__header > h1 {
   color: #fc3c3c;
   font-size: 2rem;
