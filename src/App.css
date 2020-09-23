@@ -63,7 +63,12 @@ body {
   }
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1500px) {
+  .app__left {
+    margin-right: 20px;
+    min-width: 400px;
+  }
+
   .app__stats {
     flex-direction: column;
   }

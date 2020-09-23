@@ -49,8 +49,8 @@ function App() {
   const onCountryChange = async (event) => {
     const countryCode = event.target.value
 
-    const url = countryCode === 'worldwide' 
-      ? 'https://disease.sh/v3/covid-19/all' 
+    const url = countryCode === 'worldwide'
+      ? 'https://disease.sh/v3/covid-19/all'
       : `https://disease.sh/v3/covid-19/countries/${countryCode}`
 
     await fetch(url)
@@ -80,32 +80,32 @@ function App() {
 
         <div className="app__stats">
           <InfoBox
-            isRed 
+            isRed
             active={casesType === "cases"}
             onClick={(e) => setCasesType('cases')}
-            title="Coronavirus Cases" 
-            cases={prettyPrintStat(countryInfo.todayCases)} 
-            total={prettyPrintStat(countryInfo.cases)} 
+            title="Cases"
+            cases={prettyPrintStat(countryInfo.todayCases)}
+            total={prettyPrintStat(countryInfo.cases)}
           />
-          <InfoBox 
+          <InfoBox
             active={casesType === "recovered"}
             onClick={(e) => setCasesType('recovered')}
-            title="Recovered" 
-            cases={prettyPrintStat(countryInfo.todayRecovered)} 
+            title="Recovered"
+            cases={prettyPrintStat(countryInfo.todayRecovered)}
             total={prettyPrintStat(countryInfo.recovered)}
           />
-          <InfoBox 
+          <InfoBox
             isRed
             active={casesType === "deaths"}
             onClick={(e) => setCasesType('deaths')}
-            title="Deaths" 
-            cases={prettyPrintStat(countryInfo.todayDeaths)} 
+            title="Deaths"
+            cases={prettyPrintStat(countryInfo.todayDeaths)}
             total={prettyPrintStat(countryInfo.deaths)}
           />
         </div>
-        
+
         <Map
-          casesType={casesType} 
+          casesType={casesType}
           countries={mapCountries}
           center={mapCenter}
           zoom={mapZoom}
