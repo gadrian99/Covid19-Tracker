@@ -2,7 +2,8 @@
     margin-top: 20px;
     overflow: scroll;
     height: 400px;
-    color: #6a5d5d
+    color: #6a5d5d;
+    min-width: 100%;
 }
 
 .table tr {
@@ -19,4 +20,10 @@
 }
 .table tr:nth-of-type(odd) {
     background-color: #f3f2f8;
+}
+
+@media (max-width: 800px) {
+    .table {
+        height: 200px
+    }
 }

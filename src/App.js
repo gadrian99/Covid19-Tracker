@@ -70,10 +70,10 @@ function App() {
           <img 
             className="invert"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/SARS-CoV-2_without_background.png/1020px-SARS-CoV-2_without_background.png"
-            alt="virus-logo" height="50px"></img>
+            alt="virus-logo" height="70px"></img>
             <h3>COVID-19 TRACKER</h3>
           <div className="app__header-wrapper">
-            <h4>Currently selected location :</h4>
+            <h4>Currently selected location : </h4>
             <FormControl className="app__dropdown">            
               <Select variant="outlined" onChange={onCountryChange} value={country}>
                 <MenuItem value="worldwide">Worldwide</MenuItem>
@@ -83,7 +83,6 @@ function App() {
               </Select>
             </FormControl>
           </div>
-          
         </div>
 
         <div className="app__stats invert">

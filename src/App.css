@@ -18,7 +18,7 @@ body {
 .app {
   display: flex;
   justify-content: space-evenly;
-  padding: 20px
+  padding: 50px
 }
 
 .app__dropdown {
@@ -75,18 +75,35 @@ body {
   flex-grow: 1;
 }
 
-/* .app__graph {
-  flex-grow: 1;  
-} */
-
 .app__title {
   margin: 20px 0;
 }
 
-@media (max-width: 1200px) {
+.app__graph {
+  min-height: 299px;
+  max-height: 300px;
+  min-width: 30vw;
+}
+
+@media (max-width: 800px) {
+  .app__stats {
+    flex-direction: column;
+  }
+
+  .app__right {
+    min-width: 400px
+  }
+}
+
+@media (max-width: 1350px) {
   .app {
     flex-direction: column;
   }
+
+  .app__right {
+    min-width: 100%
+  }
+
 }
 
 @media (max-width: 1500px) {
@@ -94,9 +111,5 @@ body {
     margin-right: 20px;
     min-width: 400px;
   }
-
-  /* .app__stats {
-    flex-direction: column;
-  } */
 }
 
