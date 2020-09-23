@@ -50,11 +50,11 @@ body {
 }
 
 .app__graph {
-  flex-grow: 1;
+  flex-grow: 1;  
 }
 
 .app__title {
-  margin-top: 20px;
+  margin: 20px 0;
 }
 
 @media (max-width: 990px) {

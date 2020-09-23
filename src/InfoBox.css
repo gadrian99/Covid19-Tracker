@@ -16,6 +16,8 @@
 .infoBox--selected {
   border-top: 10px solid greenyellow;
   padding: 0;
+  background-color: #fdfded !important;
+  transform: translateY(-2px);
 }
 
 .infoBox--red {
