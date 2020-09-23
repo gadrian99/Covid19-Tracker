@@ -9,6 +9,10 @@
     text-align: center;
 }
 
+.infoBox:hover {
+  background-color: #fdfdf7 !important;
+}
+
 .infoBox:not(:last-child) {
    margin-right: 10px;
 }
@@ -17,7 +21,6 @@
   border-top: 10px solid greenyellow;
   padding: 0;
   background-color: #fdfded !important;
-  transform: translateY(-2px);
 }
 
 .infoBox--red {
@@ -49,8 +52,6 @@
 
 .infoBox__title {
   font-size: 1.2rem !important;
-  padding-bottom: 5px !important;
-  box-shadow: 0 1px #6c757d !important;
 }
 
 @media (max-width: 1500px) {

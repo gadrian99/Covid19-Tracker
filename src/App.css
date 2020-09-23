@@ -15,6 +15,7 @@ body {
 
 .app__dropdown {
   background-color: white;
+  min-width: 200px !important;
 }
 
 .app__header {
