@@ -68,8 +68,10 @@ function App() {
       <div className="app__left">
         <div className="app__header">
           <img 
+            className="invert"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/SARS-CoV-2_without_background.png/1020px-SARS-CoV-2_without_background.png"
             alt="virus-logo" height="50px"></img>
+            <h3>COVID-19 TRACKER</h3>
           <div className="app__header-wrapper">
             <h4>Currently selected location :</h4>
             <FormControl className="app__dropdown">            
@@ -84,9 +86,9 @@ function App() {
           
         </div>
 
-        <div className="app__stats">
+        <div className="app__stats invert">
           <InfoBox
-            isRed
+            isOrange
             active={casesType === "cases"}
             onClick={(e) => setCasesType('cases')}
             title="Cases"
@@ -122,7 +124,7 @@ function App() {
           <h3>Live Cases by Country</h3>
           <Table countries={tableData} />
           <h3 className="app__title">Worldwide new {casesType}</h3>
-          <LineGraph className="app__graph" casesType={casesType}/>
+          <LineGraph className="app__graph invert" casesType={casesType}/>
         </CardContent>
       </Card>
     </div>

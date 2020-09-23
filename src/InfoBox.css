@@ -1,16 +1,18 @@
 .infoBox {
-    flex: 1;
+    flex: .3;
     cursor: pointer;
     padding-top: 10px;
-    width: 95%;
     display: flex;
     justify-content: center;
     align-self: center;
     text-align: center;
+    background-color: #1a1a1a !important;
+    color: #dadada !important;
+    white-space:nowrap
 }
 
 .infoBox:hover {
-  background-color: #fdfdf7 !important;
+  background-color: #353535 !important;
 }
 
 .infoBox:not(:last-child) {
@@ -20,11 +22,15 @@
 .infoBox--selected {
   border-top: 10px solid greenyellow;
   padding: 0;
-  background-color: #fdfded !important;
+  background-color: #2c2c2c !important;
 }
 
 .infoBox--red {
   border-color: red;
+}
+
+.infoBox--orange {
+  border-color: #eca100;
 }
 
 .infoBox__cases--green {
@@ -32,19 +38,23 @@
 }
 
 .infoBox__cases {
-  color: #be1937;
+  color: #eca100;
   font-weight: 600;
   font-size: 1.75rem;
   margin: 0.5rem 0;
 }
 
+.infoBox__deaths {
+  color: red !important;
+}
+
 .infoBox__cases > span {
-  color: #6c757d;
+  color: #bbbbbb;
   font-weight: 400;
 }
 
 .infoBox__total {
-  color: #6c757d;
+  color: #bbbbbb !important;
   font-weight: 700 !important;
   font-size: .8rem !important;
   margin-top: .7rem !important;

@@ -7,7 +7,7 @@ function Table({ countries }) {
         <div className="table">
             {countries.map(({country, cases, countryInfo}) => (
                 <tr>
-                    <td><img alt="countryflag" src={countryInfo.flag} className="table__img inverted" ></img></td>
+                    <td><img alt="countryflag" src={countryInfo.flag} className="table__img invert" ></img></td>
                     <td>{country}</td>
                     <td>
                         <strong>{numeral(cases).format("0,0")}</strong>
