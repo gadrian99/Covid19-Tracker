@@ -6,13 +6,12 @@
     justify-content: center;
     align-self: center;
     text-align: center;
-    background-color: #ffffff !important;
     color: #888888 !important;
     white-space:nowrap
 }
 
 .infoBox:hover {
-  background-color: #f5f5f5 !important;
+  background-color: rgb(255, 250, 239) !important;
 }
 
 .infoBox:not(:last-child) {

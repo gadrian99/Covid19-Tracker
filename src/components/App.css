@@ -3,10 +3,6 @@
   box-sizing: border-box;
 }
 
-body {
-  background-color: #f5f6fa;
-}
-
 .app {
   display: flex;
   justify-content: space-evenly;
@@ -22,8 +18,8 @@ body {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
-  justify-content: space-between;
-  flex-direction: column;
+  justify-content: space-evenly;
+  flex-direction: row;
 }
 
 .app__header > img {
