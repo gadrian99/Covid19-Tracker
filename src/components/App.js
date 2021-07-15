@@ -8,8 +8,18 @@ import { MenuItem, FormControl, Select, Card, CardContent } from "@material-ui/c
 import './App.css';
 import 'leaflet/dist/leaflet.css'
 
+import {ThemeProvider} from "styled-components";
+import { GlobalStyles } from "./globalStyles";
+import { lightTheme, darkTheme } from "./Themes"
+
 
 function App() {
+
+  const [theme, setTheme] = useState('light');
+  const themeToggler = () => {
+    theme === 'light' ? setTheme('dark') : setTheme('light')
+  }
+
   const [countries, setCountries] = useState([])
   const [country, setCountry] = useState("worldwide")
   const [countryInfo, setCountryInfo] = useState({})
@@ -64,7 +74,10 @@ function App() {
   }
 
   return (
-    <div className="app">
+    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+      <>
+      <GlobalStyles />
+      <div className="app">
       <div className="app__left">
         <div className="app__header">
           <img
@@ -72,6 +85,7 @@ function App() {
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/SARS-CoV-2_without_background.png/1020px-SARS-CoV-2_without_background.png"
             alt="virus-logo" height="70px"></img>
             <h3>COVID-19 TRACKER</h3>
+            <button onClick={themeToggler}>Switch Theme</button>
           <div className="app__header-wrapper">
             <h4>Currently selected location : </h4>
             <FormControl className="app__dropdown">
@@ -127,6 +141,9 @@ function App() {
         </CardContent>
       </Card>
     </div>
+      </>
+    </ThemeProvider>
+    
   );
 }
 
