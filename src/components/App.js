@@ -67,14 +67,14 @@ function App() {
     <div className="app">
       <div className="app__left">
         <div className="app__header">
-          <img 
-            className="invert"
+          <img
+            className=""
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/SARS-CoV-2_without_background.png/1020px-SARS-CoV-2_without_background.png"
             alt="virus-logo" height="70px"></img>
             <h3>COVID-19 TRACKER</h3>
           <div className="app__header-wrapper">
             <h4>Currently selected location : </h4>
-            <FormControl className="app__dropdown">            
+            <FormControl className="app__dropdown">
               <Select variant="outlined" onChange={onCountryChange} value={country}>
                 <MenuItem value="worldwide">Worldwide</MenuItem>
                 {countries.map((country) => (
@@ -85,7 +85,7 @@ function App() {
           </div>
         </div>
 
-        <div className="app__stats invert">
+        <div className="app__stats ">
           <InfoBox
             isOrange
             active={casesType === "cases"}
@@ -123,7 +123,7 @@ function App() {
           <h3>Live Cases by Country</h3>
           <Table countries={tableData} />
           <h3 className="app__title">Worldwide new {casesType}</h3>
-          <LineGraph className="app__graph invert" casesType={casesType}/>
+          <LineGraph className="app__graph " casesType={casesType}/>
         </CardContent>
       </Card>
     </div>

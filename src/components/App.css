@@ -3,14 +3,6 @@
   box-sizing: border-box;
 }
 
-:root {
-  filter: invert(1) hue-rotate(180deg)
-}
-
-.invert {
-  filter: invert(1) hue-rotate(180deg)
-}
-
 body {
   background-color: #f5f6fa;
 }
