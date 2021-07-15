@@ -80,11 +80,7 @@ function App() {
       <div className="app">
       <div className="app__left">
         <div className="app__header">
-          <img
-            className=""
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/SARS-CoV-2_without_background.png/1020px-SARS-CoV-2_without_background.png"
-            alt="virus-logo" height="70px"></img>
-            <h3>COVID-19 TRACKER</h3>
+          <h3>COVID-19 TRACKER</h3>
           <div className="app__header-wrapper">
             <h4>Current location : </h4>
             <FormControl className="app__dropdown">

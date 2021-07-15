@@ -16,7 +16,7 @@
 
 .app__header {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   margin-bottom: 20px;
   justify-content: space-evenly;
   flex-direction: row;
