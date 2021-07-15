@@ -11,14 +11,14 @@ import 'leaflet/dist/leaflet.css'
 import {ThemeProvider} from "styled-components";
 import { GlobalStyles } from "./globalStyles";
 import { lightTheme, darkTheme } from "./Themes"
+import { useDarkMode } from "./useDarkMode"
+import Toggle from "./Toggler"
 
 
 function App() {
 
-  const [theme, setTheme] = useState('light');
-  const themeToggler = () => {
-    theme === 'light' ? setTheme('dark') : setTheme('light')
-  }
+  const [theme, themeToggler, mountedComponent] = useDarkMode();
+  const themeMode = theme === 'light' ? lightTheme :darkTheme;
 
   const [countries, setCountries] = useState([])
   const [country, setCountry] = useState("worldwide")
@@ -72,9 +72,9 @@ function App() {
       setMapZoom(4)
     })
   }
-
+  if(!mountedComponent) return <div/>
   return (
-    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+    <ThemeProvider theme={themeMode}>
       <>
       <GlobalStyles />
       <div className="app">
@@ -85,7 +85,7 @@ function App() {
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/SARS-CoV-2_without_background.png/1020px-SARS-CoV-2_without_background.png"
             alt="virus-logo" height="70px"></img>
             <h3>COVID-19 TRACKER</h3>
-            <button onClick={themeToggler}>Switch Theme</button>
+            <Toggle theme={theme} toggleTheme={themeToggler} />
           <div className="app__header-wrapper">
             <h4>Currently selected location : </h4>
             <FormControl className="app__dropdown">
