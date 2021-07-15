@@ -4,7 +4,7 @@ import './Table.css'
 
 function Table({ countries }) {
     return (
-        <div className="table">
+        <div className="table" style={{backgroundColor: "transparent"}}>
             {countries.map(({country, cases, countryInfo}) => (
                 <tr>
                     <td><img alt="countryflag" src={countryInfo.flag} className="table__img" ></img></td>

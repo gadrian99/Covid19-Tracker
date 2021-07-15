@@ -132,7 +132,7 @@ function App() {
           zoom={mapZoom}
         />
       </div>
-      <Card className="app__right">
+      <Card className="app__right" style={{backgroundColor: "transparent"}}>
         <CardContent>
           <h3>Live Cases by Country</h3>
           <Table countries={tableData} />

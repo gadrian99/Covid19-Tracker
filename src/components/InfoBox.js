@@ -6,6 +6,7 @@ function InfoBox({ title, cases, total, active, isRed, isOrange, ...props }) {
     return (
         <Card
             onClick={props.onClick}
+            style={{backgroundColor: "transparent"}}
             className= {`infoBox 
                 ${active && "infoBox--selected"} 
                 ${isRed && "infoBox--red"}
