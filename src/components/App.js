@@ -82,10 +82,10 @@ function App() {
         <div className="app__header">
           <h3>COVID-19 TRACKER</h3>
           <div className="app__header-wrapper">
-            <h4>Current location : </h4>
-            <FormControl className="app__dropdown">
-              <Select variant="outlined" onChange={onCountryChange} value={country}>
-                <MenuItem value="worldwide">Worldwide</MenuItem>
+            <h4>Filter : </h4>
+            <FormControl className="app__dropdown" style={{ borderRadius: '10px', backgroundColor: 'transparent'}}>
+              <Select variant="outlined" onChange={onCountryChange} value={country} style={{ borderRadius: '10px', backgroundColor: 'transparent' }}>
+                <MenuItem value="worldwide" style={{ backgroundColor: 'transparent' }}>Worldwide</MenuItem>
                 {countries.map((country) => (
                   <MenuItem key={country.name} value={country.value}>{country.name}</MenuItem>
                 ))}

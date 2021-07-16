@@ -10,7 +10,7 @@
 }
 
 .app__dropdown {
-  background-color: white;
+  background-color: #FBFAF5;
   min-width: 200px !important;
 }
 
@@ -37,7 +37,7 @@
 }
 
 .app__header > h1 {
-  color: #fc3c3c;
+  color: #E38594;
   font-size: 2rem;
 }
 
